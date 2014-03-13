@@ -20,5 +20,9 @@ describe('app', function(){
         it('should use the chatroom template', function() {
             expect(route.templateUrl).toEqual('/chatroom/chatroom-template.htm');
         });
+        it('should use the ChatRoom Controller', function() {
+            expect(route.controller)
+                .toEqual('ChatRoomController');
+        });
     });
 });
