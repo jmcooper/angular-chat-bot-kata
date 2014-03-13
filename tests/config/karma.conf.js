@@ -2,9 +2,11 @@ module.exports = function(config){
     config.set({
     basePath : '../../',
     files : [
-      'tests/**/*.js'
-      'app/vendor/angularjs/*.js',
-      'app/js/**/*.js',
+      'app/vendor/angularjs/angular.min.js',
+      'app/vendor/angularjs/angular-route.min.js',
+      'app//app.js',
+      'app/**/*.js',
+      'tests/**/*.js',
     ],
     exclude : [
 	  'tests/config/**/*.js'
