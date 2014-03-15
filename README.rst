@@ -39,46 +39,10 @@ Introduction
 Starting
 --------
 
-+-------------------------------+---------------------------------------------------------------------------+
-| I need a new page in my app,  | By creating a test for a route!                                           |
-| how do I test drive that?     |                                                                           |
-|                               | In tests/app-config-tests.js add this test:                               |
-|                               |                                                                           |
-|                               | .. code:: js                                                              |
-|                               |                                                                           |
-|                               |    describe('when requesting the chatroom route', function() {            |
-|                               |        var route;                                                         |
-|                               |        beforeEach(function() {                                            |
-|                               |            route = routeService.routes['/chatroom'];                      |
-|                               |        });                                                                |
-|                               |                                                                           |
-|                               |        it('should use the chatroom template', function() {                |
-|                               |            expect(route.templateUrl)                                      |
-|                               |               .toEqual('/chatroom/chatroom-template.htm');                |
-|                               |        });                                                                |
-|                               |    });                                                                    |
-|                               |                                                                           |
-+-------------------------------+---------------------------------------------------------------------------+
-| Great, I have a test,         | Run this in your bash console to start Angular's Karma test tool:         |
-| how do I run it?              | ``node_modules/karma/bin/karma start tests/config/karma.conf.js``         |
-+-------------------------------+---------------------------------------------------------------------------+
-| Now I'm getting an error when | That error is trying to tell you that the route is undefined,             |
-| the test runs!                | it's your first failing test!  Lets make it pass.                         |
-|                               |                                                                           |
-|                               | In app/js/app.js in the config block add:                                 |
-|                               |                                                                           |
-|                               | .. code:: js                                                              |
-|                               |                                                                           |
-|                               |    $routeProvider.when('/chatroom',                                       |
-|                               |       {templateUrl: '/chatroom/chatroom-template.htm'});                  |
-|                               |                                                                           |
-+-------------------------------+---------------------------------------------------------------------------+
-| Yay, my test passes!  Now can | You bet, I've already created chatroom-template.htm for you so            |
-| I see the page working?       | lets start the webserver and checkout the page.  Open a new bash          |
-|                               | window and type: ``server.sh``                                            |
-|                               |                                                                           |
-|                               | Now navigate to: ``http://localhost:8000/index.html#/chatroom``           |
-|                               |                                                                           |
+Open a new chat window and type: ``server.sh``
+
+Now navigate to: ``http://localhost:8000/index.html
+
 +-------------------------------+---------------------------------------------------------------------------+
 | Now I want to make the chat   | For that we'll need a controller so let's add that to our route.          |
 | bot welcome me with a random  |                                                                           |
